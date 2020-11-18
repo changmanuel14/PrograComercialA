@@ -1,10 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+{% extends 'blog/base.html' %}
+
+{% block content %}
+    {% for publicacion in publicaciones %}
+        <div class="post">
+            <p class="date">Creado: {{ publicacion.fecha_creacion|date:'d-m-Y' }}</p>
+            <h1><a href="{% url 'publicacion_detalle' pk=publicacion.pk %}">{{ publicacion.titulo }}</a></h1>
+            <p>{{ publicacion.texto|truncatechars:200 }}</p>
+        </div>
+    {% endfor %}
+{% endblock %}

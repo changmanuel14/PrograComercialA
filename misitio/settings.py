@@ -125,3 +125,5 @@ STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 X_FRAME_OPTIONS='SAMEORIGIN' # only if django version >= 3.0
+
+LOGIN_REDIRECT_URL = '/'

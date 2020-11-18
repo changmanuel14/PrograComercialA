@@ -1,10 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'blog/base.html' %}
 
-</body>
-</html>
+{% block content %}
+    <h2>Nueva Publicacion</h2><br><br>
+    <form method="POST" class="post-form">{% csrf_token %}
+        {{ formulario.as_p }}
+        <button type="submit" class="save btn btn-default">Guardar</button>
+    </form>
+{% endblock %}
